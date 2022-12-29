@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>
+        Q1: In this question you must multiply two matrices A and B and store
+        the answer in matrix
+      </h1>
+      <label class="mt-5">Enter Size of matrix one</label>
+      <input type="number" id="input1" class="form-control w-25" />
+      <label class="mt-2">Enter Size of matrix Two</label>
+      <input type="number" id="input2" class="form-control w-25" />
+
+      <button class="btn btn-primary mt-3" onclick="show()">Show</button>
+      <p id="show" class="mt-5"></p>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function show() {
+        function matrixMultiply(m1, m2, matrix1, n1, n2, matrix2) {
+          let x, i, j;
+          let result = new Array(m1);
+          for (i = 0; i < m1; i++) result[i] = new Array(n2);
+
+          for (i = 0; i < m1; i++) {
+            for (j = 0; j < n2; j++) {
+              result[i][j] = 0;
+              for (x = 0; x < m2; x++) {
+                result[i][j] += matrix1[i][x] * matrix2[x][j];
+              }
+            }
+          }
+          for (i = 0; i < m1; i++) {
+            for (j = 0; j < n2; j++) {
+              document.write(result[i][j] + " ");
+            }
+            document.write("<br>");
+          }
+        }
+
+        let val1 = Number(document.getElementById("input1").value);
+        let val2 = Number(document.getElementById("input2").value);
+        let m1, m2, n1, n2;
+
+        m1 = val1;
+        m2 = val1;
+        n1 = val2;
+        n2 = val2;
+
+        if (val1 != val2) {
+          alert("The column number of matrix A should be equal to matrix B.");
+        } else {
+          var matrix1 = [];
+          var rows = val1;
+          var cols = val2;
+
+          var default11 = 1;
+          var value;
+          for (var i = 0; i < rows; i++) {
+            matrix1.push([]);
+            for (var j = 0; j < cols; j++, default11++) {
+              value = parseInt(
+                prompt("row " + (i + 1) + " col " + (j + 1) + " = ", default11)
+              );
+              matrix1[i].push(value);
+            }
+          }
+
+          var matrix2 = [];
+          var rows = val1;
+          var cols = val2;
+
+          var default11 = 1;
+          var value;
+          for (var i = 0; i < rows; i++) {
+            matrix2.push([]);
+            for (var j = 0; j < cols; j++, default11++) {
+              value = parseInt(
+                prompt("row " + (i + 1) + " col " + (j + 1) + " = ", default11)
+              );
+              matrix2[i].push(value);
+            }
+          }
+
+          matrixMultiply(m1, m2, matrix1, n1, n2, matrix2);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Question 1</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Q1. Differentiate arrow functions and regular functions.</h1>
+      <table class="table">
+        <tr>
+          <th>Arrow Functions</th>
+          <th>Regular Functions</th>
+        </tr>
+        <tr>
+          <td>The first, usual way, is by using the function keyword</td>
+          <td>
+            arrow functions do not have their own arguments and it uses the
+            arguments from the outer function
+          </td>
+        </tr>
+        <tr>
+          <td>
+            A regular function, execution context (i.e. the value of this) is
+            dynamic. This means that the value of this depends on how the
+            function was invoked (simple invocation, method invocation, indirect
+            invocation or constructor invocation).
+          </td>
+          <td>
+            an arrow function does not define its own execution context. This
+            results in an arrow function's this being resolved lexically (i.e.
+            the scope in which the arrow function was defined).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Regular functions can be used as constructors, using the new
+            keyword.
+          </td>
+          <td>
+            another consequence of the lexical resolution of this inside arrow
+            functions is that they cannot be used as constructors.
+          </td>
+        </tr>
+        <tr>
+          <td>function MyFunction() { console.log("this"); }</td>
+          <td>const Car = (color) => { console.log("this"); };</td>
+        </tr>
+      </table>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

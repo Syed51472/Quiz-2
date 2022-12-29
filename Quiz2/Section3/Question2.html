@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Question 2</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>
+        2. Write a program that takes a number of greater than 5 digits from
+        input field and shows sum of all odd numbers. For example, if the input
+        is 196783, the sum would be 1 + 9 + 7 + 3 = 20.
+      </h1>
+      <div class="row mt-4">
+        <label>Enter Number Please</label>
+        <input type="number" id="n1" class="form-control w-25 mt-3" />
+        <div class="row">
+          <div class="col-3">
+            <button class="btn btn-primary mt-4" onclick="calSum()">
+              Calculate
+            </button>
+          </div>
+        </div>
+        <p class="mt-5 fs-4" id="show"></p>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function calSum() {
+        var number1 = document.getElementById("n1").value;
+        var output = [];
+        for (var i = 0; i < number1.length; i++) {
+          output.push(+number1[i]);
+        }
+        console.log(output);
+        if (output.length < 5) {
+          alert("Please Enter digits greater than 5");
+          document.getElementById("n1").value = "";
+        } else {
+          var sum = 0;
+          var output2 = [];
+
+          for (let value of output) {
+            if (value % 2 != 0) {
+              console.log(value);
+              output2.push(value);
+            }
+            console.log(output2);
+          }
+          for (let value of output2) {
+            sum = sum + value;
+          }
+          document.getElementById(
+            "show"
+          ).innerHTML = `Sum of odd numbers is: ${sum}`;
+          console.log(sum);
+        }
+      }
+    </script>
+  </body>
+</html>
